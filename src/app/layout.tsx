@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
+import { navItems } from "@/constants/navItems";
+import { NavItem } from "@/components/settings/NavItem";
+import NavigationBar from "@/components/navigation/NavigationBar";
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -28,7 +31,26 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <NavigationBar />
+        <div className="flex pt-[70px]">
+          {" "}
+          {/* Adjust padding to account for fixed nav */}
+          <nav
+            className="w-[15%] max-md:w-full fixed top-[70px] left-0 h-full bg-white shadow-md" // Ensure side nav is fixed and below the top nav
+            role="navigation"
+            aria-label="Main navigation"
+          >
+            <div className="flex flex-col mt-3.5 pt-10 pl-5 text-lg font-medium">
+              {navItems.map((item, index) => (
+                <div key={index} className={index > 0 ? "mt-10" : ""}>
+                  <NavItem {...item} />
+                </div>
+              ))}
+            </div>
+          </nav>
+          <main className="ml-[15%] w-[85%] max-md:w-full">{children}</main>{" "}
+          {/* Adjust main content margin */}
+        </div>
       </body>
     </html>
   );
