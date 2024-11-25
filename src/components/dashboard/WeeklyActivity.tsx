@@ -19,12 +19,12 @@ export const WeeklyActivity: React.FC<WeeklyActivityProps> = ({ data }) => {
         Weekly Activity
       </h2>
       <div className="bg-white rounded-3xl p-8 shadow-md">
-        <ChartContainer config={chartConfig} className="min-h-[400px] w-full">
+        <ChartContainer config={chartConfig} className="max-h-[380px] w-full">
           <BarChart
             data={data}
             margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
             width={500}
-            height={200}
+            height={300}
           >
             <CartesianGrid strokeDasharray="3 3" vertical={false} />
             <XAxis dataKey="day" />

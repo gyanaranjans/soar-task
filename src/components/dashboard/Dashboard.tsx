@@ -80,11 +80,11 @@ export const Dashboard: React.FC = () => {
         <div className="w-full">
           <div className="grid grid-cols-12 gap-6">
             {/* First Row: Cards and Recent Transactions */}
-            <div className="col-span-8">
+            <div className="col-span-12 lg:col-span-8">
               <h2 className="text-2xl font-semibold text-slate-700">
                 My Cards
               </h2>
-              <div className="flex gap-4 mt-4">
+              <div className="flex gap-4 mt-4 overflow-x-auto">
                 <Card
                   balance="$5,756"
                   cardHolder="Eddy Cusuma"
@@ -101,7 +101,7 @@ export const Dashboard: React.FC = () => {
                 />
               </div>
             </div>
-            <div className="col-span-4">
+            <div className="col-span-12 lg:col-span-4">
               <section aria-label="Recent Transactions">
                 <h2 className="text-2xl font-semibold text-slate-700">
                   Recent Transactions
@@ -117,15 +117,15 @@ export const Dashboard: React.FC = () => {
             </div>
 
             {/* Second Row: Weekly Activity and Expense Statistics */}
-            <div className="col-span-8">
+            <div className="col-span-12 lg:col-span-8">
               <WeeklyActivity data={weeklyActivityData} />
             </div>
-            <div className="col-span-4">
+            <div className="col-span-12 lg:col-span-4">
               <ExpenseStats data={expenseStatsData} />
             </div>
 
             {/* Third Row: Quick Transfer and Balance History */}
-            <div className="col-span-4">
+            <div className="col-span-12 lg:col-span-4">
               <section aria-label="Quick Transfer">
                 <h2 className="text-2xl font-semibold text-slate-700">
                   Quick Transfer
@@ -156,7 +156,7 @@ export const Dashboard: React.FC = () => {
                 </div>
               </section>
             </div>
-            <div className="col-span-8 h-[300px]">
+            <div className="col-span-12 lg:col-span-8 h-[300px]">
               <BalanceHistory data={balanceHistoryData} />
             </div>
           </div>

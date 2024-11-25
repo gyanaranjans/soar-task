@@ -28,7 +28,7 @@ export const BalanceHistory: React.FC<BalanceHistoryProps> = ({ data }) => {
         Balance History
       </h2>
       <div className="bg-white rounded-3xl p-8 shadow-lg">
-        <ChartContainer config={chartConfig} className="min-h-[300px] w-full">
+        <ChartContainer config={chartConfig} className="max-h-[230px] w-full">
           <ResponsiveContainer width="100%" height={200}>
             <AreaChart data={data} margin={{ left: 12, right: 12 }}>
               <defs>
