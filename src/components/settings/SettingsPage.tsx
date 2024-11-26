@@ -63,13 +63,13 @@ export default function SettingsPage() {
   };
 
   return (
-    <main className="flex overflow-hidden flex-col bg-white">
-      <div className="flex shrink-0 self-end max-w-full h-px bg-slate-200 w-[1190px]" />
+    <main className="flex overflow-hidden flex-col bg-slate-200">
+      <div className="flex shrink-0 self-end max-w-full h-px bg--200 w-[1190px]" />
 
       <div className="w-full max-md:max-w-full">
         <div className="flex gap-5 max-md:flex-col">
           <section className="flex flex-col ml-5 w-full max-md:ml-0 max-md:w-full">
-            <div className="flex flex-col grow px-10 pt-8 pb-44 w-full bg-slate-100 max-md:px-5 max-md:pb-24 max-md:mt-10 max-md:max-w-full">
+            <div className="flex flex-col grow px-10 pt-8 pb-44 w-full bg--100 max-md:px-5 max-md:pb-24 max-md:mt-10 max-md:max-w-full">
               <article className="flex flex-col items-end px-8 py-9 w-full bg-white rounded-3xl min-h-[717px] max-md:px-5 max-md:max-w-full">
                 <form
                   className="flex flex-col w-full rounded-none max-w-[1050px] max-md:max-w-full"

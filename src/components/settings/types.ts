@@ -2,6 +2,7 @@ export interface NavItemProps {
   icon: string;
   label: string;
   isActive?: boolean;
+  path?: string;
 }
 
 export interface InputFieldProps {

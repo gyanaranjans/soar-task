@@ -1,6 +1,7 @@
 "use client";
 import * as React from "react";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { Menu } from "lucide-react";
 import { navItems } from "@/constants/navItems";
 import { NavItem } from "@/components/settings/NavItem";
@@ -11,6 +12,8 @@ const NavigationBar: React.FC = () => {
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
+
+  const currentPath = usePathname();
 
   return (
     <>
@@ -24,7 +27,7 @@ const NavigationBar: React.FC = () => {
             >
               <Menu className="w-8 h-8" />
             </button>
-            <div className="flex gap-2.5 items-center text-2xl font-extrabold z-50 ">
+            <div className="flex gap-2.5 items-center text-2xl font-extrabold z-100">
               <img
                 loading="lazy"
                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/926b72f3953fc305456c77479fbbd9fe16e7f5630232abc43a7fbf0a412ee5f4?placeholderIfAbsent=true&apiKey=bdac07c799104a2a86b036aad3e22016"
@@ -33,6 +36,9 @@ const NavigationBar: React.FC = () => {
               />
               <h1>Soar Task</h1>
             </div>
+            <h1 className="hidden lg:block lg:text-3xl lg:pl-20">
+              {currentPath === "/" ? "Overview" : "Settings"}
+            </h1>
           </div>
           <div className="flex items-center gap-4">
             <form
@@ -55,18 +61,18 @@ const NavigationBar: React.FC = () => {
                 className="bg-transparent border-none outline-none text-slate-400 w-full"
               />
             </form>
-            <div className="hidden lg:flex items-center gap-4">
+            <div className="flex items-center gap-4">
               <img
                 loading="lazy"
                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/1282d3e192feec94ae475ef73eb28b909a71ac3132d063d1c14a468cfb76ac82?placeholderIfAbsent=true&apiKey=bdac07c799104a2a86b036aad3e22016"
                 alt="Messages"
-                className="object-contain shrink-0 w-[50px] aspect-square"
+                className="hidden lg:block object-contain shrink-0 w-[50px] aspect-square"
               />
               <img
                 loading="lazy"
                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/b212169921a6d4d1b84e58eacde65487c9a45d151a81e9bd37de90dd00de55b6?placeholderIfAbsent=true&apiKey=bdac07c799104a2a86b036aad3e22016"
                 alt="Notifications"
-                className="object-contain shrink-0 w-[50px] aspect-square"
+                className="hidden lg:block object-contain shrink-0 w-[50px] aspect-square"
               />
               <img
                 loading="lazy"
@@ -86,7 +92,7 @@ const NavigationBar: React.FC = () => {
         aria-label="Main navigation"
       >
         <div className="flex flex-col mt-3.5 pt-5 pl-5 text-lg font-medium">
-          <div className="flex gap-2.5 items-center text-2xl font-extrabold pb-5">
+          <div className="flex gap-2.5 items-center text-2xl font-extrabold pb-10">
             <img
               loading="lazy"
               src="https://cdn.builder.io/api/v1/image/assets/TEMP/926b72f3953fc305456c77479fbbd9fe16e7f5630232abc43a7fbf0a412ee5f4?placeholderIfAbsent=true&apiKey=bdac07c799104a2a86b036aad3e22016"
@@ -97,7 +103,7 @@ const NavigationBar: React.FC = () => {
           </div>
           {navItems.map((item, index) => (
             <div key={index} className={index > 0 ? "mt-10" : ""}>
-              <NavItem {...item} />
+              <NavItem {...item} isActive={currentPath === item.path} />
             </div>
           ))}
         </div>
