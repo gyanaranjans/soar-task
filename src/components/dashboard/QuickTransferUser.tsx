@@ -117,8 +117,11 @@ export function QuickTransfer() {
             Write Amount
           </span>
           <div className="flex-1 flex items-center justify-between bg-[#F4F4F4] rounded-xl ml-[110px]">
-            <span className="pl-4 text-[15px] text-[#1A1D1F]">525.50</span>
-            <button className="h-[44px] px-5 bg-[#1A1D1F] text-[15px] text-white rounded-xl flex items-center gap-2 hover:bg-black/90 transition-colors m-1">
+            <input
+              className="pl-4 text-[15px] text-[#1A1D1F]"
+              placeholder="525.50"
+            />
+            <button className="h-[44px] px-5 bg-[#1A1D1F] hover:bg-[#333] transition-colors text-[15px] text-white rounded-xl flex items-center gap-2 m-1 transform hover:scale-105">
               Send
               <Send className="w-4 h-4 -rotate-45" />
             </button>

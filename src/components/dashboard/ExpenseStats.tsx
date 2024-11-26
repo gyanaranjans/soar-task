@@ -4,7 +4,6 @@ import {
   PieChart,
   Pie,
   Cell,
-  Tooltip,
   Legend,
   ResponsiveContainer,
   LabelList,

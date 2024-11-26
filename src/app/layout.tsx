@@ -3,6 +3,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 
 import NavigationBar from "@/components/navigation/NavigationBar";
+import { DashboardProvider } from "@/context/dashboardContext";
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -29,10 +31,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <NavigationBar />
-        <div className="flex pt-[70px]">
-          <main className="lg:ml-[15%] w-[85%] max-md:w-full">{children}</main>
-        </div>
+        <DashboardProvider>
+          <NavigationBar />
+          <div className="flex pt-[70px]">
+            <main className="lg:ml-[15%] w-[85%] max-md:w-full">
+              {children}
+            </main>
+          </div>
+        </DashboardProvider>
       </body>
     </html>
   );

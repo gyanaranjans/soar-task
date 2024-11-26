@@ -1,5 +1,6 @@
 import * as React from "react";
 import { TransactionProps } from "./types";
+import Image from "next/image";
 
 export const Transaction: React.FC<TransactionProps> = ({
   type,
@@ -15,11 +16,13 @@ export const Transaction: React.FC<TransactionProps> = ({
       aria-label={ariaLabel || `Transaction: ${type} ${amount}`}
     >
       <div className="flex items-center gap-4">
-        <img
+        <Image
           loading="lazy"
           src={icon}
           alt=""
           className="object-contain w-[40px] aspect-square bg-gray-200 rounded-lg"
+          width={40}
+          height={40}
         />
         <div className="flex flex-col flex-1">
           <div className="text-base font-medium text-neutral-800">{type}</div>

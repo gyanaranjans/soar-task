@@ -1,5 +1,6 @@
 import * as React from "react";
 import { CardProps } from "./types";
+import Image from "next/image";
 
 export const Card: React.FC<CardProps> = ({
   balance,
@@ -40,7 +41,7 @@ export const Card: React.FC<CardProps> = ({
           </div>
         </div>
         <div className="flex flex-col items-start">
-          <img
+          <Image
             loading="lazy"
             src={
               variant === "dark"
@@ -49,6 +50,8 @@ export const Card: React.FC<CardProps> = ({
             }
             alt="Visa logo"
             className="object-contain self-end aspect-square w-[35px]"
+            width={35}
+            height={35}
           />
           <div
             className={`mt-8 text-xs ${

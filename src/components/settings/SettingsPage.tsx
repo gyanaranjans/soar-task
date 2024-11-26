@@ -68,7 +68,7 @@ export default function SettingsPage() {
 
       <div className="w-full max-md:max-w-full">
         <div className="flex gap-5 max-md:flex-col">
-          <section className="flex flex-col ml-5 w-full max-md:ml-0 max-md:w-full">
+          <section className="flex flex-col w-full max-md:w-full">
             <div className="flex flex-col grow px-10 pt-8 pb-44 w-full bg--100 max-md:px-5 max-md:pb-24 max-md:mt-10 max-md:max-w-full">
               <article className="flex flex-col items-end px-8 py-9 w-full bg-white rounded-3xl min-h-[717px] max-md:px-5 max-md:max-w-full">
                 <form
@@ -211,7 +211,7 @@ export default function SettingsPage() {
 
                   <button
                     type="submit"
-                    className="self-end mt-10 px-5 py-3.5 text-lg font-medium text-center text-white whitespace-nowrap rounded-2xl bg-neutral-800 w-[190px]"
+                    className="self-end mt-10 px-5 py-3.5 text-lg font-medium text-center text-white whitespace-nowrap rounded-2xl bg-neutral-800 w-[190px] hover:bg-neutral-700 transition-colors duration-300"
                   >
                     Save
                   </button>
