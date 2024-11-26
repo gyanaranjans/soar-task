@@ -6,12 +6,19 @@ export const InputField: React.FC<InputFieldProps> = ({
   value,
   type = "text",
   hasIcon,
+  error,
+  ...rest
 }) => {
   return (
     <div className="flex flex-col flex-1 grow shrink-0 basis-0 w-fit">
       <label className="self-start text-base text-neutral-800">{label}</label>
       <div className="flex gap-5 justify-between px-5 py-4 mt-3 text-base bg-white rounded-2xl border border-solid border-slate-200 text-slate-400">
-        {value}
+        <input
+          type={type}
+          defaultValue={value}
+          className="bg-transparent border-none outline-none w-full"
+          {...rest}
+        />
         {hasIcon && (
           <img
             loading="lazy"
@@ -21,6 +28,7 @@ export const InputField: React.FC<InputFieldProps> = ({
           />
         )}
       </div>
+      {error && <p className="text-red-500 mt-1">{error}</p>}
     </div>
   );
 };

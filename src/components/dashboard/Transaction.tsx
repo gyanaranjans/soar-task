@@ -19,7 +19,7 @@ export const Transaction: React.FC<TransactionProps> = ({
           loading="lazy"
           src={icon}
           alt=""
-          className="object-contain w-[55px] aspect-square"
+          className="object-contain w-[40px] aspect-square bg-gray-200 rounded-lg"
         />
         <div className="flex flex-col flex-1">
           <div className="text-base font-medium text-neutral-800">{type}</div>

@@ -9,6 +9,7 @@ export interface InputFieldProps {
   value: string;
   type?: string;
   hasIcon?: boolean;
+  error?: string;
 }
 
 export interface ProfileFormData {

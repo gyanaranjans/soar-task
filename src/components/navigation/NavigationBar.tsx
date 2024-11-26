@@ -60,19 +60,19 @@ const NavigationBar: React.FC = () => {
                 loading="lazy"
                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/1282d3e192feec94ae475ef73eb28b909a71ac3132d063d1c14a468cfb76ac82?placeholderIfAbsent=true&apiKey=bdac07c799104a2a86b036aad3e22016"
                 alt="Messages"
-                className="object-contain shrink-0 w-[30px] aspect-square"
+                className="object-contain shrink-0 w-[50px] aspect-square"
               />
               <img
                 loading="lazy"
                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/b212169921a6d4d1b84e58eacde65487c9a45d151a81e9bd37de90dd00de55b6?placeholderIfAbsent=true&apiKey=bdac07c799104a2a86b036aad3e22016"
                 alt="Notifications"
-                className="object-contain shrink-0 w-[30px] aspect-square"
+                className="object-contain shrink-0 w-[50px] aspect-square"
               />
               <img
                 loading="lazy"
                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/6df88ffd4bfeb2489999e47e6774b8f19c7c5010336baa904189b93bddbaaece?placeholderIfAbsent=true&apiKey=bdac07c799104a2a86b036aad3e22016"
                 alt="User profile"
-                className="object-contain shrink-0 w-[35px] aspect-square"
+                className="object-contain shrink-0 w-[50px] aspect-square"
               />
             </div>
           </div>

@@ -2,7 +2,7 @@
 import * as React from "react";
 import { Card } from "./Card";
 import { Transaction } from "./Transaction";
-import { QuickTransferUser } from "./QuickTransferUser";
+import { QuickTransfer } from "./QuickTransferUser";
 import { WeeklyActivity } from "./WeeklyActivity";
 import { ExpenseStats } from "./ExpenseStats";
 import { BalanceHistory } from "./BalanceHistory";
@@ -12,37 +12,19 @@ const transactions = [
     type: "Deposit from my Card",
     amount: "-$850",
     date: "28 January 2021",
-    icon: "/assets/transaction-1.svg",
+    icon: "/icons/dashboard/business_finance_money.png",
   },
   {
     type: "Deposit Paypal",
     amount: "+$2,500",
     date: "25 January 2021",
-    icon: "/assets/transaction-2.svg",
+    icon: "/icons/dashboard/paypal-payment-pay.png",
   },
   {
     type: "Jemi Wilson",
     amount: "+$5,400",
     date: "21 January 2021",
-    icon: "/assets/transaction-3.svg",
-  },
-];
-
-const quickTransferUsers = [
-  {
-    image: "/assets/user-1.svg",
-    name: "Livia Bator",
-    role: "CEO",
-  },
-  {
-    image: "/assets/user-2.svg",
-    name: "Randy Press",
-    role: "Director",
-  },
-  {
-    image: "/assets/user-3.svg",
-    name: "Workman",
-    role: "Designer",
+    icon: "/icons/dashboard/circle-dollar.png",
   },
 ];
 
@@ -126,35 +108,7 @@ export const Dashboard: React.FC = () => {
 
             {/* Third Row: Quick Transfer and Balance History */}
             <div className="col-span-12 lg:col-span-4">
-              <section aria-label="Quick Transfer">
-                <h2 className="text-2xl font-semibold text-slate-700">
-                  Quick Transfer
-                </h2>
-                <div className="bg-white rounded-3xl p-6 shadow-md mt-4">
-                  <div className="flex gap-5 justify-between">
-                    {quickTransferUsers.map((user, index) => (
-                      <QuickTransferUser key={index} {...user} />
-                    ))}
-                  </div>
-                  <form className="mt-7">
-                    <div className="flex gap-7">
-                      <input
-                        type="text"
-                        placeholder="Write Amount"
-                        className="w-full p-3 rounded-lg bg-slate-100"
-                        aria-label="Transfer amount"
-                      />
-                      <button
-                        type="submit"
-                        className="px-6 py-3 bg-blue-500 text-white rounded-lg"
-                        aria-label="Send money"
-                      >
-                        Send Money
-                      </button>
-                    </div>
-                  </form>
-                </div>
-              </section>
+              <QuickTransfer />
             </div>
             <div className="col-span-12 lg:col-span-8 h-[300px]">
               <BalanceHistory data={balanceHistoryData} />

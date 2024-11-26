@@ -14,11 +14,11 @@ export const Card: React.FC<CardProps> = ({
 
   return (
     <div
-      className={`flex flex-col pt-6 w-full ${bgColor} rounded-3xl shadow-lg`}
+      className={`flex flex-col pt-6 w-full ${bgColor} rounded-3xl shadow-lg max-w-[400px] md:max-w-full md:h-auto h-[200px]`}
       role="article"
       aria-label={ariaLabel || `Credit card for ${cardHolder}`}
     >
-      <div className="flex gap-5 justify-between self-center w-full max-w-[300px]">
+      <div className="flex gap-5 justify-between self-center w-full max-w-[400px]">
         <div className="flex flex-col text-xs">
           <div className={variant === "dark" ? "text-white" : "text-slate-400"}>
             Balance
@@ -44,8 +44,8 @@ export const Card: React.FC<CardProps> = ({
             loading="lazy"
             src={
               variant === "dark"
-                ? "/assets/visa-white.svg"
-                : "/assets/visa-dark.svg"
+                ? "/icons/dashboard/white-chip-card.png"
+                : "/icons/dashboard/black-chip-card.png"
             }
             alt="Visa logo"
             className="object-contain self-end aspect-square w-[35px]"
