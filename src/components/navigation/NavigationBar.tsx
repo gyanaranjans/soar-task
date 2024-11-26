@@ -24,7 +24,7 @@ const NavigationBar: React.FC = () => {
             >
               <Menu className="w-8 h-8" />
             </button>
-            <div className="flex gap-2.5 items-center text-2xl font-extrabold lg:hidden">
+            <div className="flex gap-2.5 items-center text-2xl font-extrabold z-50 ">
               <img
                 loading="lazy"
                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/926b72f3953fc305456c77479fbbd9fe16e7f5630232abc43a7fbf0a412ee5f4?placeholderIfAbsent=true&apiKey=bdac07c799104a2a86b036aad3e22016"
@@ -85,8 +85,8 @@ const NavigationBar: React.FC = () => {
         role="navigation"
         aria-label="Main navigation"
       >
-        <div className="flex flex-col mt-3.5 pt-10 pl-5 text-lg font-medium">
-          <div className="flex gap-2.5 items-center text-2xl font-extrabold lg:hidden">
+        <div className="flex flex-col mt-3.5 pt-5 pl-5 text-lg font-medium">
+          <div className="flex gap-2.5 items-center text-2xl font-extrabold pb-5">
             <img
               loading="lazy"
               src="https://cdn.builder.io/api/v1/image/assets/TEMP/926b72f3953fc305456c77479fbbd9fe16e7f5630232abc43a7fbf0a412ee5f4?placeholderIfAbsent=true&apiKey=bdac07c799104a2a86b036aad3e22016"

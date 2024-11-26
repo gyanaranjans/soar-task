@@ -46,12 +46,12 @@ export const ExpenseStats: React.FC<ExpenseStatProps> = ({ data }) => {
       <h2 className="text-2xl font-semibold text-slate-700 pb-1.5">
         Expense Statistics
       </h2>
-      <div className="bg-white rounded-3xl p-4 shadow-lg max-w-[400px] mx-auto">
+      <div className="bg-white rounded-3xl p-4 shadow-lg">
         <ChartContainer
           config={chartConfig}
-          className="mx-auto aspect-square h-[400px] [&_.recharts-text]:fill-background"
+          className="mx-auto aspect-square h-[400px] w-full max-w-[400px] [&_.recharts-text]:fill-background"
         >
-          <ResponsiveContainer width="100%" height={400}>
+          <ResponsiveContainer width="100%" height="100%">
             <PieChart>
               <ChartTooltip
                 content={<ChartTooltipContent nameKey="category" hideLabel />}
@@ -60,14 +60,12 @@ export const ExpenseStats: React.FC<ExpenseStatProps> = ({ data }) => {
                 data={data}
                 dataKey="percentage"
                 nameKey="category"
-                cx="50%"
-                cy="50%"
-                outerRadius={150}
-                innerRadius={80}
+                outerRadius="80%"
+                innerRadius="50%"
                 fill="#8884d8"
                 labelLine={false}
-                paddingAngle={5}
                 label={renderCustomizedLabel}
+                paddingAngle={5}
               >
                 <LabelList
                   dataKey="category"

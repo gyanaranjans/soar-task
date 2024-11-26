@@ -31,7 +31,7 @@ export default function RootLayout({
       >
         <NavigationBar />
         <div className="flex pt-[70px]">
-          <main className="ml-[15%] w-[85%] max-md:w-full">{children}</main>
+          <main className="lg:ml-[15%] w-[85%] max-md:w-full">{children}</main>
         </div>
       </body>
     </html>
